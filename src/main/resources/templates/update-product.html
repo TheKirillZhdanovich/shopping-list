@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Product</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+
+<body>
+
+<br>
+<br>
+
+<div class = "container">
+    <div class = "row">
+        <div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class = "text-center"> Update Product </h1>
+            <div class = "card-body">
+                <form th:action="@{/shopping-list/{id} (id=${product.getId()})}" th:object = "${product}" method="POST">
+                    <div class ="form-group">
+                        <label> Product Name </label>
+                        <input
+                                type = "text"
+                                name = "name"
+                                th:field = "*{name}"
+                                class = "form-control"
+                                placeholder="Enter Product Name"
+                        />
+
+                    </div>
+
+                    <div class = "box-footer">
+                        <button type="submit" class = "btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
